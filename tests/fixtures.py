@@ -4,8 +4,8 @@ import numpy as np
 
 import pcst_scenario as S
 
-# Kleines Gegenbeispiel zur Nestung: Depot 0, Kunden 1-5; Erlöse = Einheitserlöse x Skala. Bei Skala 15.0 ist der optimale Baum {1, 4} (und 5 gehört nicht dazu),
-# bei Skala 16.5 der Baum mit {2, 5} - kein optimaler Baum der höheren Skala enthält alle Kunden eines optimalen Baums der niedrigeren.
+# Kleines Gegenbeispiel zur Nestung: Depot 0, Kunden 1-5; Erlöse = Einheitserlöse x Skala. Bei Skala 15.0 schließt der optimale Baum die Kunden {2, 4, 5} an,
+# bei Skala 16.5 die Kunden {2, 3, 5} - Kunde 4 fällt heraus, obwohl sein Erlös steigt; kein optimaler Baum der höheren Skala enthält alle Kunden eines optimalen Baums der niedrigeren.
 NEST_EDGES = ((0, 1, 2.558), (0, 2, 4.284), (0, 3, 5.115), (0, 4, 0.834), (3, 5, 5.093), (4, 5, 4.863))
 NEST_UNIT_PRIZES = (0.0, 0.014, 0.632, 0.298, 0.023, 0.866)
 NEST_SCALES = (15.0, 16.5)
