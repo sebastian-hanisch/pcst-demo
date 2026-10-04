@@ -91,7 +91,7 @@ oder eine **Lokalsuche** besser ist, und ob die Menge der angeschlossenen Kunden
 )
 st.caption(
     "Setzt auf [steiner-tree-demo](https://github.com/sebastian-hanisch/steiner-tree-demo) auf (Stadtplan, Steinerpunkte, Dreyfus-Wagner, KMB und Takahashi-Matsuyama als Bausteine für \"alle anschließen\"). "
-    "Geplante Nachfolger (nicht gebaut): Sensitivität und dynamischer MST, zufällige Spannbäume."
+    "Nachfolger (inzwischen gebaut): Sensitivität und dynamischer MST, zufällige Spannbäume."
 )
 
 with st.expander("So funktionieren die Verfahren", expanded=True):
@@ -339,7 +339,7 @@ st.markdown(
     """
 | Annahme | Was passiert, wenn sie verletzt ist | Wer setzt an |
 |---|---|---|
-| **Die Auswahl lohnt sich immer** | Nur mitten im Übergang: bei Niveau 2.5 (Plan 8 x 8, 8 Kunden) bringt das Optimum gegenüber der besseren Grundlinie "alle" oder "nichts" in 90 % der Instanzen etwas, im Mittel 6.0 %; bei Niveau 1.5 in 18 % (1.1 %), bei Niveau 4 in 58 % (1.8 %). In Gruppen liegt der Übergang tiefer (Niveau 1.5: 78 %, Niveau 2.5: 10 %); bei 30 % gesperrten Straßen werden im Mittel 3.0 statt 6.3 von 8 Kunden angeschlossen. | - |
+| **Die Auswahl lohnt sich immer** | Nur mitten im Übergang: bei Niveau 2.5 (Plan 8 x 8, 8 Kunden) bringt das Optimum gegenüber der besseren Grundlinie "alle" oder "nichts" in 90 % der Instanzen etwas, im Mittel 6.0 %; bei Niveau 1.5 in 18 % (1.1 %), bei Niveau 4 in 58 % (1.7 %). In Gruppen liegt der Übergang tiefer (Niveau 1.5: 78 %, Niveau 2.5: 10 %); bei 30 % gesperrten Straßen werden im Mittel 3.0 statt 6.3 von 8 Kunden angeschlossen. | - |
 | **GW ist nah am Optimum** | Nein: bei Niveau 2.5 ist GW mit GW-Beschneiden nie optimal (mittlere Lücke 12.8 %, größte 28.4 %), mit starkem Beschneiden in 30 % (2.83 %, größte 12.4 %); starkes Beschneiden ist in 88 % der Instanzen besser. Bei Niveau 1.5 kostet das grobe Beschneiden 22.0 % (stark: 0), bei Niveau 4 liegen beide bei 6 bis 7 % - GW ist als Steinerbaum-Verfahren schwach. Die Garantie 2 − 1/(n − 1) wurde in keiner gemessenen Instanz verletzt. | Erst Steiner, dann kürzen; Lokalsuche |
 | **GW ist die richtige Wahl** | "Erst Steinerbaum, dann kürzen" liegt bei Niveau 2.5 im Mittel nur 0.83 % über dem Optimum (in 56 % optimal), die Lokalsuche 0.69 % (60 %); es schlägt GW (stark) in 58 % der Instanzen, GW schlägt es in 8 %. GW liefert dafür eine **Untergrenze** (im Mittel 68 % des Optimums) und eine bewiesene Garantie, die die anderen nicht haben. | - |
 | **Kleine Zielwert-Lücke, kleiner Verlust** | Nein: bei Niveau 2.5 sind 2.83 % Zielwert-Lücke von GW (stark) im Mittel 24.6 % Netto-Erlös-Verlust; bei "erst Steiner" 0.83 % → 9.7 %, bei GW mit GW-Beschneiden 12.8 % → 163.8 %. Die Garantie gilt für den Zielwert, nicht für den Netto-Erlös. | Verfahren mit Netto-Erlös-Garantie (nicht gebaut) |
@@ -375,6 +375,6 @@ Implementiert in `pcst_algorithm.py` (Verfahren), `pcst_scenario.py` (Pläne), `
 st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Spannbäume: vom Kruskal bis zum Zufallsbaum](https://sebastianhanisch.net/konzepte-spannbaum.html)."
 )

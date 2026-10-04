@@ -16,8 +16,8 @@ Kruskal (Wurzel)                                                                
  │    └─ Kapazitierter MST                                                                 [gebaut: cmst-demo]
  ├─ Steiner-Baum                                                                           [gebaut: steiner-tree-demo]
  │    └─ Prize-Collecting Steiner-Baum                                                     [DIESES STÜCK]
- ├─ MST-Sensitivität & dynamischer MST                                                     [nicht gebaut]
- └─ Zufällige Spannbäume & Kirchhoff                                                       [nicht gebaut]
+ ├─ MST-Sensitivität & dynamischer MST                                                     [gebaut: mst-sensitivity-demo]
+ └─ Zufällige Spannbäume & Kirchhoff                                                       [gebaut: random-spanning-tree-demo]
 ```
 
 Ergebnis in Kürze: **Die Auswahl lohnt nur mitten im Übergang: bei Niveau 2.5 (Plan 8 x 8, 8 Kunden) bringt das Optimum gegenüber der besseren der Grundlinien "alle" und "nichts anschließen" in 90 % der Instanzen etwas (im Mittel 6.0 %), bei Niveau 1.5 in 18 % und bei Niveau 4 in 58 %. GW ist kein gutes Näherungsverfahren für diese Aufgabe: mit GW-Beschneiden nie optimal (mittlere Lücke 12.8 %), mit starkem Beschneiden in 30 % (2.83 %); "erst Steinerbaum, dann kürzen" liegt nur 0.83 % über dem Optimum und schlägt GW in 58 % der Instanzen (GW es in 8 %). GW liefert dafür eine Untergrenze (im Mittel 68 % des Optimums) und eine Garantie, die nie verletzt wurde. Die Approximationsgüte betrifft den Zielwert, nicht den Netto-Erlös: 2.83 % Zielwert-Lücke von GW (stark) sind im Mittel 24.6 % Netto-Erlös-Verlust.**
@@ -25,7 +25,7 @@ Ergebnis in Kürze: **Die Auswahl lohnt nur mitten im Übergang: bei Niveau 2.5 
 | Frage | Ergebnis (Plan 8 x 8, 8 Kunden, 10 % gesperrte Straßen, gleichverteilt, gleiche Erlöse, Niveau 2.5, sofern nicht anders angegeben; **50 Instanzen**, Seeds 200000–200049, bzw. **Median** über 5 feste Instanzen, Seeds 100000–100004; vollständig deterministisch) |
 |---|---|
 | **Ist der Kernsatz und Dreyfus-Wagner richtig?** | ✅ ja, direkt geprüft: Dreyfus-Wagner gleich dem Minimum über **alle** Knotenmengen (Brute-Force auf 160 Zufallsgraphen mit Gleichständen, dazu 120 Pläne 3 x 3); der Kernsatz zusätzlich gegen eine davon unabhängige Aufzählung **aller Bäume** durch das Depot |
-| **Wo lohnt sich die Auswahl?** | Wert der Auswahl (1 − Optimum / bessere Grundlinie) bei Niveau 1.5/2.5/4: in **18/90/58 %** der Instanzen etwas, im Mittel **1.1/6.0/1.8 %**; angeschlossene Kunden im Mittel 0.4/5.5/7.8 von 8. Median über 5 feste Instanzen bei Niveau 1.5/2/2.5/3/4/6: **0/62.5/87.5/100/100/100 %** der Kunden angeschlossen (leerer Baum → alle) |
+| **Wo lohnt sich die Auswahl?** | Wert der Auswahl (1 − Optimum / bessere Grundlinie) bei Niveau 1.5/2.5/4: in **18/90/58 %** der Instanzen etwas, im Mittel **1.1/6.0/1.7 %**; angeschlossene Kunden im Mittel 0.4/5.5/7.8 von 8. Median über 5 feste Instanzen bei Niveau 1.5/2/2.5/3/4/6: **0/62.5/87.5/100/100/100 %** der Kunden angeschlossen (leerer Baum → alle) |
 | **Alle oder nichts anschließen** | Bei Niveau 2.5 liegt "alle anschließen" im Mittel **9.1 %** über dem Optimum (Zielwert), "nichts anschließen" **16.5 %**; bei Niveau 1.5 "alle" +59.6 %, bei Niveau 4 "nichts" +74.6 % |
 | **Gruppierte Kunden** | ⚠️ der Übergang liegt tiefer: 9 Kunden in Gruppen, Niveau 1.5: Auswahl lohnt in **78 %** (im Mittel 5.1 %), 6.1 von 9 Kunden angeschlossen; Niveau 2.5: nur **10 %** (0.17 %), 8.7 von 9 angeschlossen |
 | **Sperrungen, gemischte Erlöse** | Bei 0/10/30 % gesperrten Straßen werden im Mittel **6.3/5.5/3.0** von 8 Kunden angeschlossen (Auswahl lohnt in 78/90/60 %); gemischte Erlöse (0.5 bis 1.5 x) verhalten sich wie gleiche: 84 %, 6.8 %, 4.9 Kunden |
@@ -105,4 +105,4 @@ Tests: `pip install -r requirements-dev.txt` und `python -m pytest tests/ -W err
 - Bausteine des Steinerbaums (wie in der Steiner-Baum-Demo): Takahashi & Matsuyama (1980), Kou, Markowsky & Berman (1981), Dreyfus & Wagner (1971).
 - Zur Beschreibung von GW-Wachstum und -Beschneiden: arXiv 1710.07040 (Anhang A, Übersicht über GW, Johnson u. a. und Feofiloff u. a.).
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning.
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Spannbäume: vom Kruskal bis zum Zufallsbaum](https://sebastianhanisch.net/konzepte-spannbaum.html).
